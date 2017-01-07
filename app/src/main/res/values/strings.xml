@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">RandomUser</string>
+    <string name="no_result">No Result</string>
+    <string name="text_view">View Details</string>
+    <string name="refresh">Refresh</string>
+    <string name="dob">DOB:</string>
+    <string name="location">Location:</string>
+    <string name="email">Email:</string>
+    <string name="phone">Phone:</string>
+    <string name="female">female</string>
+    <string name="male">male</string>
+</resources>

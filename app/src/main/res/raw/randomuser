@@ -1,0 +1,6 @@
+baseURL = https://randomuser.me/
+results = 10
+connectTimeoutSec = 10
+readTimeoutSec = 10
+diskCacheSizeMB = 128
+diskCachePath = RU_HTTP
