@@ -46,6 +46,3 @@ In this project, run check to ensure code quality in the following order: Checks
 * Define product flavor in Gradle script if there're dev and production environments
 * ProGuard obfuscator setup for signed release build
 * CI setup. I'd use Jenkins in house or cloud CI service (Travis / Circle) with outsourcing company. Plus AutoDelivery / CrashReport integration like Fabric
-
-### Woops... Bug
-Forgot to include scrollView for detail page therefore it only shows half page in landscape and it's not scrollable !!! Bad user experience users not happy :(    (But I wanna enjoy my weekend so I will fix it next week LOL)
