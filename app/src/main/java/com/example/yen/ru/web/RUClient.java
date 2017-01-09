@@ -19,11 +19,6 @@ public class RUClient {
         RUService = RestClientGenerator.createService(RUService.class, okHttpClient, baseURL);
     }
 
-    public RUClient(RUService RUService) {
-        this.RUService = RUService;
-        this.baseURL = null;
-    }
-
     public String getBaseURL() {
         return baseURL;
     }

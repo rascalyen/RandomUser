@@ -139,7 +139,7 @@ public class ResultAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         @Bind(R.id.text_view)
         TextView viewDetail;
 
-        public ResultHolder(View itemView) {
+        ResultHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
@@ -153,7 +153,7 @@ public class ResultAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         @Bind(R.id.footer)
         ProgressBar progressBar;
 
-        public FooterHolder(View itemView) {
+        FooterHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
