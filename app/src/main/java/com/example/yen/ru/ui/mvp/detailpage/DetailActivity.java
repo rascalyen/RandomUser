@@ -72,9 +72,12 @@ public class DetailActivity extends BaseActivity {
         email.setText(result.getEmail());
 
         StringBuilder sb = new StringBuilder();
-        sb.append(result.getLocation().getStreet() + " | ")
-                .append(result.getLocation().getCity() + ",  ")
-                .append(result.getLocation().getState() + " ")
+        sb.append(result.getLocation().getStreet())
+                .append(" | ")
+                .append(result.getLocation().getCity())
+                .append(",  ")
+                .append(result.getLocation().getState())
+                .append(' ')
                 .append(result.getLocation().getPostcode());
 
         location.setText(sb);
@@ -83,6 +86,7 @@ public class DetailActivity extends BaseActivity {
     private void setupActionBar() {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(result.getName().getFirst() + " " + result.getName().getLast());
+        getSupportActionBar().setTitle(
+                result.getName().getFirst() + " " + result.getName().getLast());
     }
 }

@@ -20,7 +20,7 @@ def qualityConfigDir = "$project.rootDir/config/quality";
 def reportsDir = "$project.buildDir/reports"
 
 check.dependsOn 'checkstyle', 'findbugs', 'pmd'
-compileLint.dependsOn 'pmd'
+lint.dependsOn 'pmd'
 
 
 task checkstyle(type: Checkstyle,

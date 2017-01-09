@@ -52,8 +52,8 @@ public class ResultAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     .inflate(R.layout.item_result, parent, false);
 
             return new ResultHolder(view);
-
-        } else if (viewType == VIEW_TYPE_FOOTER) {
+        }
+        else if (viewType == VIEW_TYPE_FOOTER) {
             View view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.view_footer, parent, false);
 
@@ -69,7 +69,8 @@ public class ResultAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             final Result result = results.get(position);
 
             ResultHolder resultHolder = (ResultHolder) holder;
-            resultHolder.title.setText(result.getName().getFirst() + " " + result.getName().getLast());
+            resultHolder.title.setText(context.getString(R.string.name,
+                    result.getName().getFirst(), result.getName().getLast()));
             setInfoText(resultHolder, result);
             picasso.load(result.getPicture().getMedium()).fit().into(resultHolder.resultImage);
             resultHolder.viewDetail.setOnClickListener(new View.OnClickListener() {
@@ -88,8 +89,10 @@ public class ResultAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     private void setInfoText(ResultHolder holder, Result result) {
         StringBuilder sb = new StringBuilder();
-        sb.append(result.getLocation().getCity() + ", ")
-                .append(result.getLocation().getState() + " | ")
+        sb.append(result.getLocation().getCity())
+                .append(", ")
+                .append(result.getLocation().getState())
+                .append(" | ")
                 .append(result.getPhone());
 
         holder.info.setText(sb);

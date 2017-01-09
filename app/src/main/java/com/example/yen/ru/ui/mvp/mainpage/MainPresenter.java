@@ -18,13 +18,13 @@ public class MainPresenter implements Presenter<MainViewMVP> {
     private int total;
     private int page;
     private String gender;
-    private RUClient RUClient;
+    private RUClient ruClient;
     private Properties properties;
     private MainViewMVP mainView;
     private Call<RandomUserResponse> call;
 
-    @Inject public MainPresenter(RUClient RUClient, Properties properties) {
-        this.RUClient = RUClient;
+    @Inject public MainPresenter(RUClient ruClient, Properties properties) {
+        this.ruClient = ruClient;
         this.properties = properties;
     }
 
@@ -87,11 +87,13 @@ public class MainPresenter implements Presenter<MainViewMVP> {
     protected void getRandomResults(int page, String gender) {
         mainView.storeGender(gender);
 
-        call = RUClient.getRUService().getResults(properties.getProperty("results"), Integer.toString(page), gender);
+        call = ruClient.getRUService().getResults(
+                properties.getProperty("results"), Integer.toString(page), gender);
 
         call.enqueue(new Callback<RandomUserResponse>() {
             @Override
-            public void onResponse(Call<RandomUserResponse> call, Response<RandomUserResponse> response) {
+            public void onResponse(Call<RandomUserResponse> call,
+                                   Response<RandomUserResponse> response) {
 
                 if (response.isSuccessful() && response.body().getError() == null)
                     onSuccess(response.body());

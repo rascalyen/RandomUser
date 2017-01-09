@@ -104,24 +104,22 @@ public class MainFragment extends BaseFragment implements MainViewMVP {
                     int totalItemCount = linearLayoutManager.getItemCount();
                     int firstVisibleItem = linearLayoutManager.findFirstVisibleItemPosition();
 
-                    if (visibleItemCount > 0) {
-                        if (progressView.getVisibility() != View.VISIBLE) {
-                            int vH = (recyclerView == null) ? 0 :
-                                    recyclerView.getHeight();
-                            int bottomPos = (recyclerView == null) ? 0 :
-                                    recyclerView.getChildAt(visibleItemCount - 1)
-                                            .getPaddingBottom();
-                            int lastItemPosition = firstVisibleItem + visibleItemCount;
+                    if (visibleItemCount > 0 && (progressView.getVisibility() != View.VISIBLE)) {
+                        int vH = (recyclerView == null) ? 0 :
+                                recyclerView.getHeight();
+                        int bottomPos = (recyclerView == null) ? 0 :
+                                recyclerView.getChildAt(visibleItemCount - 1)
+                                        .getPaddingBottom();
+                        int lastItemPosition = firstVisibleItem + visibleItemCount;
 
-                            if (lastItemPosition == totalItemCount && vH >= bottomPos) {
-                                if (preLastPosition != lastItemPosition) {
-                                    mainPresenter.loadMore();
-                                }
-                                preLastPosition = lastItemPosition;
+                        if (lastItemPosition == totalItemCount && vH >= bottomPos) {
+                            if (preLastPosition != lastItemPosition) {
+                                mainPresenter.loadMore();
                             }
-                            else {
-                                preLastPosition = lastItemPosition;
-                            }
+                            preLastPosition = lastItemPosition;
+                        }
+                        else {
+                            preLastPosition = lastItemPosition;
                         }
                     }
                 }
