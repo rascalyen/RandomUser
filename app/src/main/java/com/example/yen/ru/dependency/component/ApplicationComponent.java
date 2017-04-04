@@ -3,6 +3,7 @@ package com.example.yen.ru.dependency.component;
 import android.app.Application;
 import com.example.yen.ru.RandomUserApplication;
 import com.example.yen.ru.dependency.module.ApplicationModule;
+import com.example.yen.ru.dependency.module.NetworkModule;
 import com.example.yen.ru.web.RUClient;
 import com.squareup.picasso.Picasso;
 import java.util.Properties;
@@ -11,7 +12,7 @@ import dagger.Component;
 
 
 @Singleton
-@Component(modules = ApplicationModule.class)
+@Component(modules = {ApplicationModule.class, NetworkModule.class})
 public interface ApplicationComponent {
 
     void injectApplication(RandomUserApplication application);
@@ -27,6 +28,7 @@ public interface ApplicationComponent {
 
             return DaggerApplicationComponent.builder()
                     .applicationModule(new ApplicationModule(application))
+                    .networkModule(new NetworkModule())
                     .build();
         }
     }
