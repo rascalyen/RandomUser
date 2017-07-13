@@ -1,11 +1,11 @@
 # Random User
-
+<p align="left">
 <img height="380" src="https://github.com/rascalyen/RandomUser/blob/master/screenshot/00.png" />
 <img height="380" src="https://github.com/rascalyen/RandomUser/blob/master/screenshot/01.png" />
 <img height="380" src="https://github.com/rascalyen/RandomUser/blob/master/screenshot/02.png" />
 <img height="380" src="https://github.com/rascalyen/RandomUser/blob/master/screenshot/03.png" />
 <img height="250" src="https://github.com/rascalyen/RandomUser/blob/master/screenshot/04.png" />
-<br>
+</p><br>
 
 ### Features
 * See random user list (10 items in recyclerView) when you open
