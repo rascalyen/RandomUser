@@ -42,7 +42,7 @@ In this project, run check to ensure code quality in the following order: Checks
 
 * Better user message, data validation, JavaDoc
 * Unit test with [JUnit](http://junit.org/), [Mockito](http://mockito.org/) and [Robolectric](http://robolectric.org/)
-* UI functional test with [Espresso] (https://google.github.io/android-testing-support-library/docs/espresso/)
+* UI functional test with [Espresso](https://google.github.io/android-testing-support-library/docs/espresso/)
 * Define product flavor in Gradle script if there're dev and production environments
 * ProGuard obfuscator setup for signed release build
 * CI setup. I'd use Jenkins in house or cloud CI service (Travis / Circle) with outsourcing company. Plus AutoDelivery / CrashReport integration like Fabric
